@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'custom_search_icon.dart';
+import 'custom_app_bar.dart';
+import 'custom_note_item.dart';
 
 class NotesViewBody extends StatelessWidget {
   const NotesViewBody({super.key});
@@ -8,34 +8,14 @@ class NotesViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Column(
-        children: const [
-          CustomAppBar(),
-        ],
-      ),
-    );
-  }
-}
-
-class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(18.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const Text(
-            'Notes',
-            style: TextStyle(fontSize: 25),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const CustomSearchIcon(),
-          )
-        ],
+      child: Padding(
+        padding: const EdgeInsets.all(18.0),
+        child: Column(
+          children: const [
+            CustomAppBar(),
+            NoteItem(),
+          ],
+        ),
       ),
     );
   }
