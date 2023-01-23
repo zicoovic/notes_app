@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'custom_app_bar.dart';
+import 'custom_icon.dart';
 import 'notes_list_view.dart';
 
 class NotesViewBody extends StatelessWidget {
@@ -11,9 +12,15 @@ class NotesViewBody extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(18.0),
         child: Column(
-          children: const [
-            CustomAppBar(),
-            Expanded(child: NotesListView()),
+          children: [
+            CustomAppBar(
+              icon: CustomIcon(
+                icon: Icons.search,
+                function: () {},
+              ),
+              title: 'Note',
+            ),
+            const Expanded(child: NotesListView()),
           ],
         ),
       ),
