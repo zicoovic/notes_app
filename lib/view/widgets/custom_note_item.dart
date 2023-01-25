@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/view/edit_note_view.dart';
 
