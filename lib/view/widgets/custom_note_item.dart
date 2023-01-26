@@ -1,7 +1,5 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/view/edit_note_view.dart';
 
@@ -15,7 +13,7 @@ class NoteItem extends StatelessWidget {
     return GestureDetector(
       onTap: () => Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => const EditNoteView(),
+          builder: (context) => EditNoteView(note: note),
         ),
       ),
       child: Container(

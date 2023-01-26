@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CustomIcon extends StatelessWidget {
-  const CustomIcon({super.key, required this.icon, required this.function});
+  const CustomIcon({super.key, required this.icon, required this.onPressed});
 
   final IconData icon;
-  final VoidCallback function;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class CustomIcon extends StatelessWidget {
         alignment: Alignment.center,
         iconSize: 28,
         padding: EdgeInsets.zero,
-        onPressed: function,
+        onPressed: onPressed,
         icon: Icon(
           icon,
         ),

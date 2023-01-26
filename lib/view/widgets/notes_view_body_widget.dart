@@ -29,7 +29,7 @@ class _NotesViewBodyState extends State<NotesViewBody> {
             CustomAppBar(
               icon: CustomIcon(
                 icon: Icons.search,
-                function: () {},
+                onPressed: () {},
               ),
               title: 'Note',
             ),
