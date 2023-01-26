@@ -1,6 +1,10 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/view/edit_note_view.dart';
+
+import 'delete_note_dialog.dart';
 
 class NoteItem extends StatelessWidget {
   const NoteItem({super.key, required this.note});
@@ -48,7 +52,14 @@ class NoteItem extends StatelessWidget {
                 ),
               ),
               trailing: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return DeleteNoteDialog(note: note);
+                    },
+                  );
+                },
                 icon: const Icon(
                   Icons.delete,
                   size: 25,
