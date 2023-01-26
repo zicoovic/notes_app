@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 
 import '../../models/note_model.dart';
 
@@ -28,6 +30,7 @@ class DeleteNoteDialog extends StatelessWidget {
                     onPressed: () {
                       note.delete();
                       Navigator.canPop(context) ? Navigator.pop(context) : null;
+                      BlocProvider.of<NotesCubit>(context).fetchAllNotes();
                     },
                     child: const Text(
                       'Delete',
@@ -36,7 +39,7 @@ class DeleteNoteDialog extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: () {
-                      Navigator.pop(context);
+                      Navigator.canPop(context) ? Navigator.pop(context) : null;
                     },
                     child: const Text(
                       'Cancel',
